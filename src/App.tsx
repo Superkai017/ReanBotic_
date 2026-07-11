@@ -149,11 +149,11 @@ export default function App() {
 
   // Main UI Renders
   if (page === 'landing') {
-    return <LandingPage onStart={() => setPage('auth')} />;
+    return <LandingPage onStart={() => setPage('auth')} darkMode={darkMode} onToggleDarkMode={toggleDarkMode} />;
   }
 
   if (page === 'auth') {
-    return <Auth onSuccess={handleAuthSuccess} />;
+    return <Auth onSuccess={handleAuthSuccess} darkMode={darkMode} onToggleDarkMode={toggleDarkMode} />;
   }
 
   return (
