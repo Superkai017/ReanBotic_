@@ -1,0 +1,6 @@
+{
+  "name": "Reanbotic",
+  "description": "Interactive, gamified robotics learning platform prototype featuring step-by-step lessons, circuit simulation, virtual Arduino IDE, and AI mentorship.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
