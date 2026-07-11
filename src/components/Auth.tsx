@@ -20,7 +20,6 @@ export default function Auth({ onSuccess, darkMode, onToggleDarkMode }: AuthProp
   });
 
   const [selectedSpec, setSelectedSpec] = useState<string>('embed');
-  const [highSchoolClicked, setHighSchoolClicked] = useState(false);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -126,41 +125,23 @@ export default function Auth({ onSuccess, darkMode, onToggleDarkMode }: AuthProp
                   {/* University option (Clickable) */}
                   <button
                     type="button"
-                    onClick={() => {
-                      setFormData({ ...formData, education: 'University' });
-                      setHighSchoolClicked(false);
-                    }}
+                    onClick={() => setFormData({ ...formData, education: 'University' })}
                     className={`p-4 border rounded-2xl flex flex-col items-center gap-2 cursor-pointer transition text-left w-full ${formData.education === 'University' ? 'border-blue-500 bg-blue-50 text-slate-900 dark:bg-blue-950/20 dark:text-white' : 'border-slate-200 bg-slate-50 text-slate-500 hover:border-slate-300 dark:border-slate-800 dark:bg-slate-950 dark:text-slate-400 dark:hover:border-slate-700'}`}
                   >
                     <GraduationCap className={`w-6 h-6 ${formData.education === 'University' ? 'text-blue-600 dark:text-blue-400' : 'text-slate-400 dark:text-slate-500'}`} />
                     <span className="font-semibold text-sm">University</span>
                   </button>
 
-                  {/* High School Option (Blocked with coming soon!) */}
-                  <div className="relative w-full">
-                    <button
-                      type="button"
-                      onClick={() => {
-                        setHighSchoolClicked(true);
-                      }}
-                      className="p-4 border border-slate-200 bg-slate-50 text-slate-500 hover:border-slate-300 dark:border-slate-800 dark:bg-slate-950 dark:text-slate-400 dark:hover:border-slate-700 rounded-2xl flex flex-col items-center gap-2 cursor-pointer transition text-left w-full relative overflow-hidden"
-                    >
-                      <Building className="w-6 h-6 text-slate-400 dark:text-slate-600" />
-                      <span className="font-semibold text-sm text-slate-500">High School</span>
-                      <span className="absolute top-1.5 right-1.5 px-1.5 py-0.5 text-[8px] bg-amber-100 text-amber-700 border border-amber-300 dark:bg-amber-500/20 dark:text-amber-400 dark:border-amber-500/30 rounded font-semibold">SOON</span>
-                    </button>
-                  </div>
-                </div>
-
-                {highSchoolClicked && (
-                  <motion.p
-                    initial={{ opacity: 0, y: 5 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    className="text-xs text-amber-600 dark:text-amber-400 mt-2 text-center"
+                  {/* High School Option */}
+                  <button
+                    type="button"
+                    onClick={() => setFormData({ ...formData, education: 'High School' })}
+                    className={`p-4 border rounded-2xl flex flex-col items-center gap-2 cursor-pointer transition text-left w-full ${formData.education === 'High School' ? 'border-blue-500 bg-blue-50 text-slate-900 dark:bg-blue-950/20 dark:text-white' : 'border-slate-200 bg-slate-50 text-slate-500 hover:border-slate-300 dark:border-slate-800 dark:bg-slate-950 dark:text-slate-400 dark:hover:border-slate-700'}`}
                   >
-                    ⚠️ High School Curriculum is coming soon! Please use the active <strong>University Path</strong> for this prototype.
-                  </motion.p>
-                )}
+                    <Building className={`w-6 h-6 ${formData.education === 'High School' ? 'text-blue-600 dark:text-blue-400' : 'text-slate-400 dark:text-slate-500'}`} />
+                    <span className="font-semibold text-sm">High School</span>
+                  </button>
+                </div>
               </div>
 
               {/* Terms agreement */}
@@ -243,7 +224,7 @@ export default function Auth({ onSuccess, darkMode, onToggleDarkMode }: AuthProp
 
             {/* Launch CTA */}
             <div className="mt-10 flex flex-col sm:flex-row items-center justify-between gap-4 border-t border-slate-200 dark:border-slate-900 pt-6">
-              <span className="text-xs text-slate-500 font-mono text-center sm:text-left">Current Path: University / Level 1 Fundamentals</span>
+              <span className="text-xs text-slate-500 font-mono text-center sm:text-left">Current Path: {formData.education} / Level 1 Fundamentals</span>
               <button
                 onClick={handleCompleteWizard}
                 className="w-full sm:w-auto px-6 py-3.5 bg-blue-600 hover:bg-blue-500 text-white font-bold rounded-2xl shadow-xl shadow-blue-600/30 transition-all flex items-center justify-center gap-2 active:scale-95 cursor-pointer"
