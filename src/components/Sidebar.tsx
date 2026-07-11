@@ -21,7 +21,7 @@ export default function Sidebar({ currentPage, onNavigate, onLogout }: SidebarPr
   return (
     <>
       {/* Desktop Sidebar (Left side, fixed) */}
-      <aside className="hidden md:flex flex-col w-64 bg-white dark:bg-slate-950 border-r border-slate-200 dark:border-slate-900 text-slate-500 dark:text-slate-450 p-6 h-screen sticky top-0 justify-between shrink-0 overflow-y-auto scrollbar-thin transition-colors">
+      <aside className="hidden md:flex flex-col md:w-56 lg:w-64 bg-white dark:bg-slate-950 border-r border-slate-200 dark:border-slate-900 text-slate-500 dark:text-slate-450 p-5 lg:p-6 h-screen sticky top-0 justify-between shrink-0 overflow-y-auto scrollbar-thin transition-colors">
         <div className="space-y-6">
           {/* Logo Branding */}
           <div className="flex items-center gap-3 cursor-pointer" onClick={() => onNavigate('dashboard')}>

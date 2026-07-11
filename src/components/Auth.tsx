@@ -12,11 +12,11 @@ interface AuthProps {
 export default function Auth({ onSuccess, darkMode, onToggleDarkMode }: AuthProps) {
   const [step, setStep] = useState<'form' | 'path-selection'>('form');
   const [formData, setFormData] = useState({
-    name: 'Oudom Art',
-    email: 'oudomart@gmail.com',
-    password: 'password123',
+    name: '',
+    email: '',
+    password: '',
     education: 'University' as 'University' | 'High School',
-    agree: true,
+    agree: false,
   });
 
   const [selectedSpec, setSelectedSpec] = useState<string>('embed');
@@ -242,11 +242,11 @@ export default function Auth({ onSuccess, darkMode, onToggleDarkMode }: AuthProp
             </div>
 
             {/* Launch CTA */}
-            <div className="mt-10 flex items-center justify-between border-t border-slate-200 dark:border-slate-900 pt-6">
-              <span className="text-xs text-slate-500 font-mono">Current Path: University / Level 1 Fundamentals</span>
+            <div className="mt-10 flex flex-col sm:flex-row items-center justify-between gap-4 border-t border-slate-200 dark:border-slate-900 pt-6">
+              <span className="text-xs text-slate-500 font-mono text-center sm:text-left">Current Path: University / Level 1 Fundamentals</span>
               <button
                 onClick={handleCompleteWizard}
-                className="px-6 py-3.5 bg-blue-600 hover:bg-blue-500 text-white font-bold rounded-2xl shadow-xl shadow-blue-600/30 transition-all flex items-center gap-2 active:scale-95 cursor-pointer"
+                className="w-full sm:w-auto px-6 py-3.5 bg-blue-600 hover:bg-blue-500 text-white font-bold rounded-2xl shadow-xl shadow-blue-600/30 transition-all flex items-center justify-center gap-2 active:scale-95 cursor-pointer"
               >
                 Complete Registration & Launch App
                 <ArrowRight className="w-4 h-4" />

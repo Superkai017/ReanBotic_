@@ -172,7 +172,7 @@ export default function App() {
         />
 
         {/* Core application body contents with transitions */}
-        <main className="flex-1 p-6 max-w-7xl mx-auto w-full overflow-x-hidden">
+        <main className="flex-1 p-4 sm:p-6 max-w-7xl mx-auto w-full overflow-x-hidden">
           <AnimatePresence mode="wait">
             <motion.div
               key={page}

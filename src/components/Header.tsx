@@ -21,7 +21,7 @@ export default function Header({ user, onNavigate, darkMode, onToggleDarkMode, o
   ];
 
   return (
-    <header className="sticky top-0 z-40 w-full border-b border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900/95 backdrop-blur px-6 py-3 flex items-center justify-between transition-colors">
+    <header className="sticky top-0 z-40 w-full border-b border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900/95 backdrop-blur px-4 md:px-6 py-3 flex items-center justify-between flex-wrap gap-x-3 gap-y-2 transition-colors">
       {/* Course / Level dropdown indicator */}
       <div className="flex items-center gap-2">
         <div className="p-1.5 bg-blue-100 dark:bg-blue-950/40 rounded-lg text-blue-600 dark:text-blue-400 font-mono text-xs font-bold border border-blue-200 dark:border-blue-500/20">
@@ -65,7 +65,7 @@ export default function Header({ user, onNavigate, darkMode, onToggleDarkMode, o
       </div>
 
       {/* Right Controls */}
-      <div className="flex items-center gap-3">
+      <div className="flex items-center gap-2 md:gap-3">
         {/* Dark Mode toggle */}
         <button
           onClick={onToggleDarkMode}

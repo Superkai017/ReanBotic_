@@ -17,7 +17,7 @@ export default function LandingPage({ onStart, darkMode, onToggleDarkMode }: Lan
       <div className="absolute bottom-10 right-10 w-[600px] h-[600px] bg-emerald-200/40 dark:bg-emerald-900/10 rounded-full blur-3xl pointer-events-none" />
 
       {/* Landing Header */}
-      <header className="relative z-10 border-b border-slate-200 dark:border-slate-900 bg-white/80 dark:bg-slate-950/80 backdrop-blur-md px-6 py-4">
+      <header className="relative z-10 border-b border-slate-200 dark:border-slate-900 bg-white/80 dark:bg-slate-950/80 backdrop-blur-md px-4 sm:px-6 py-4">
         <div className="max-w-7xl mx-auto flex items-center justify-between">
           <div className="flex items-center gap-3">
             <div className="p-2 bg-blue-600 rounded-xl shadow-lg shadow-blue-500/20">
@@ -29,9 +29,9 @@ export default function LandingPage({ onStart, darkMode, onToggleDarkMode }: Lan
             </div>
           </div>
 
-          <div className="flex items-center gap-6">
-            <a href="#roadmap" className="text-sm text-slate-600 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white transition">Roadmap</a>
-            <a href="#features" className="text-sm text-slate-600 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white transition">Features</a>
+          <div className="flex items-center gap-3 sm:gap-6">
+            <a href="#roadmap" className="hidden sm:inline text-sm text-slate-600 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white transition">Roadmap</a>
+            <a href="#features" className="hidden sm:inline text-sm text-slate-600 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white transition">Features</a>
             <button
               onClick={onToggleDarkMode}
               className="p-2 text-slate-500 hover:text-slate-800 dark:text-slate-400 dark:hover:text-white rounded-xl bg-slate-100 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 transition-colors cursor-pointer"
@@ -50,7 +50,7 @@ export default function LandingPage({ onStart, darkMode, onToggleDarkMode }: Lan
       </header>
 
       {/* Hero Section */}
-      <section className="relative max-w-7xl mx-auto px-6 pt-16 pb-24 md:pt-24 md:pb-32 grid md:grid-cols-2 gap-12 items-center">
+      <section className="relative max-w-7xl mx-auto px-4 sm:px-6 pt-12 sm:pt-16 pb-16 sm:pb-24 md:pt-24 md:pb-32 grid md:grid-cols-2 gap-12 items-center">
         <div>
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -193,7 +193,7 @@ export default function LandingPage({ onStart, darkMode, onToggleDarkMode }: Lan
       </section>
 
       {/* Feature Section */}
-      <section id="features" className="bg-white border-y border-slate-200 dark:bg-slate-900/40 dark:border-slate-900 py-24 px-6 relative z-10">
+      <section id="features" className="bg-white border-y border-slate-200 dark:bg-slate-900/40 dark:border-slate-900 py-16 sm:py-24 px-4 sm:px-6 relative z-10">
         <div className="max-w-7xl mx-auto">
           <div className="text-center max-w-2xl mx-auto">
             <h2 className="text-3xl font-bold text-slate-900 dark:text-white tracking-tight">Why Choose Reanbotic?</h2>
@@ -244,7 +244,7 @@ export default function LandingPage({ onStart, darkMode, onToggleDarkMode }: Lan
       </section>
 
       {/* Curriculum Roadmap Section */}
-      <section id="roadmap" className="py-24 px-6 max-w-5xl mx-auto relative z-10">
+      <section id="roadmap" className="py-16 sm:py-24 px-4 sm:px-6 max-w-5xl mx-auto relative z-10">
         <div className="text-center max-w-xl mx-auto mb-16">
           <h2 className="text-3xl font-bold text-slate-900 dark:text-white">Your Robotics Journey</h2>
           <p className="text-slate-600 dark:text-slate-400 mt-3">From absolute electronics starter up to advanced autonomous navigation algorithms. Unlock levels step-by-step!</p>
@@ -301,7 +301,7 @@ export default function LandingPage({ onStart, darkMode, onToggleDarkMode }: Lan
       </section>
 
       {/* CTA Bottom Section */}
-      <section className="bg-gradient-to-b from-slate-50 to-slate-100 border-t border-slate-200 dark:from-slate-950 dark:to-slate-900 dark:border-slate-900 py-24 px-6 text-center relative overflow-hidden z-10">
+      <section className="bg-gradient-to-b from-slate-50 to-slate-100 border-t border-slate-200 dark:from-slate-950 dark:to-slate-900 dark:border-slate-900 py-16 sm:py-24 px-4 sm:px-6 text-center relative overflow-hidden z-10">
         <div className="max-w-xl mx-auto relative z-10">
           <Bot className="w-12 h-12 text-blue-500 mx-auto mb-6 animate-pulse" />
           <h2 className="text-3xl font-bold text-slate-900 dark:text-white tracking-tight">Ready to Build the Robots of Tomorrow?</h2>
