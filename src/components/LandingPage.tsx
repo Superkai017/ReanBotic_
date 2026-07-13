@@ -265,7 +265,7 @@ export default function LandingPage({ onStart, darkMode, onToggleDarkMode }: Lan
                   </div>
 
                   {/* Spacer or Content depending on left/right alignment */}
-                  <div className={`pl-16 md:pl-0 w-full md:w-1/2 flex ${isEven ? 'md:justify-end md:pr-12' : 'md:order-2 md:pl-12'}`}>
+                  <div className={`pl-16 md:pl-0 w-full md:w-1/2 flex ${isEven ? 'md:justify-end md:pr-12' : 'md:ml-auto md:justify-start md:pl-12'}`}>
                     <div className="w-full max-w-md bg-white border border-slate-200 hover:border-blue-300 dark:bg-slate-900/40 dark:border-slate-900 dark:hover:border-slate-800 p-6 rounded-2xl transition group">
                       <div className="flex items-center justify-between mb-3">
                         <span className="text-xs font-mono text-blue-600 dark:text-blue-400 uppercase tracking-widest">Level {level.id}</span>
